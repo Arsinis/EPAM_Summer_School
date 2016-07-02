@@ -8,6 +8,8 @@ namespace Parser
 {
     public class Parsing
     {
+        public string intext = ",:;";
+        public string ending = ".!?";
         public ICollection<ISentenceComponent> GetSentenceComponent(string sen)
         {
             string buffer = null;
@@ -21,13 +23,20 @@ namespace Parser
                     components.Add(new Word(buffer));
                     buffer = null;
                 }
-                if (Word.vowels.Contains(sen[index]))
+                if (intext.Contains(sen[index]))
                 {
-                    //do something
+                    components.Add(new SentencePunctuation(sen[index].ToString()));
+                    buffer = null;
+                }
+                if (ending.Contains(sen[index]))
+                {
+                    buffer = null;
+                    components.Add(new SentenceEnding(sen[index].ToString()));
                 }
             }
+            return components;
         }
-       /* public Text Parse(string s)
+       /*  public Text Parse(string s)
         {
             ICollection<ISentence> sen = new List<ISentence>();
             foreach (var c in s)
@@ -36,6 +45,6 @@ namespace Parser
                     sen.Add(new Sentence());
             }
 
-        }  */
+        } */ 
     }
 }
