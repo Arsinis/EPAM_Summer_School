@@ -42,13 +42,13 @@
   <ItemGroup>
     <Compile Include="ISentence.cs" />
     <Compile Include="ISentenceComponent.cs" />
-    <Compile Include="ISentenceEnding.cs" />
-    <Compile Include="ISentencePunctuation.cs" />
     <Compile Include="IText.cs" />
     <Compile Include="IWord.cs" />
     <Compile Include="Parsing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sentence.cs" />
+    <Compile Include="SentenceEnding.cs" />
+    <Compile Include="SentencePunctuation.cs" />
     <Compile Include="Text.cs" />
     <Compile Include="Word.cs" />
   </ItemGroup>

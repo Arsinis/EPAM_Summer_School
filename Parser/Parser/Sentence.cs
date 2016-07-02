@@ -7,20 +7,20 @@ namespace Parser
 {
     public class Sentence :ISentence
     {
-        private ICollection<IWord> _wordsCollection;
+        private ICollection<ISentenceComponent> _componentsCollection;
 
-        public ICollection<IWord> WordsCollection
+        public ICollection<ISentenceComponent> ComponentsCollection
         {
             get
             {
-                return _wordsCollection;
+                return _componentsCollection;
             }
-            set { this._wordsCollection = value; }
+            set { this._componentsCollection = value; }
         }
 
-        public Sentence(ICollection<IWord> sourceCollection)
+        public Sentence(ICollection<ISentenceComponent> sourceCollection)
         {
-            WordsCollection = sourceCollection;
+            ComponentsCollection = sourceCollection;
         }
     }
 }

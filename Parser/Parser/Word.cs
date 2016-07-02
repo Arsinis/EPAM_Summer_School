@@ -7,7 +7,13 @@ namespace Parser
 {
     public class Word : IWord
     {
-        ICollection<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+        public static ICollection<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+
+        public Word(string component)
+        {
+            Component = component;
+        }
+
         public string Component { get; private set; }
         public bool IsStartWithconsolant()
         {
