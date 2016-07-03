@@ -20,31 +20,45 @@ namespace Parser
                     buffer += sen[index];
                 if (sen[index] == ' ')
                 {
-                    components.Add(new Word(buffer));
-                    buffer = null;
+                    if (buffer != null)
+                    {
+                        components.Add(new Word(buffer));
+                        buffer = null;
+                    }
+                    components.Add(new SentencePunctuation(" "));
                 }
                 if (intext.Contains(sen[index]))
                 {
-                    components.Add(new SentencePunctuation(sen[index].ToString()));
+                    components.Add(new Word(buffer));
                     buffer = null;
+                    components.Add(new SentencePunctuation(sen[index].ToString()));
                 }
                 if (ending.Contains(sen[index]))
                 {
-                    buffer = null;
+                    components.Add(new Word(buffer));
                     components.Add(new SentenceEnding(sen[index].ToString()));
                 }
             }
             return components;
         }
-       /*  public Text Parse(string s)
+         public Text Parse(string text)
         {
-            ICollection<ISentence> sen = new List<ISentence>();
-            foreach (var c in s)
+            ICollection<ISentence> sentences = new List<ISentence>();
+            string buffer = null;
+            foreach (var symbol in text)
             {
-                if (c=='.')
-                    sen.Add(new Sentence());
+                if (!ending.Contains(symbol))
+                    buffer += symbol;
+                else
+                {
+                    buffer += symbol;
+                    sentences.Add(new Sentence(GetSentenceComponent(buffer)));
+                    buffer = null;
+                }
+                    
             }
-
-        } */ 
+            Text txt = new Text(sentences);
+             return txt;
+        } 
     }
 }

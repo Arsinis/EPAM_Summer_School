@@ -7,5 +7,6 @@ namespace Parser
 {
     public interface ISentence 
     {
+        string CurrentSentence { get; }
     }
 }

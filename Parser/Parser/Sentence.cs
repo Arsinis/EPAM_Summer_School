@@ -22,5 +22,7 @@ namespace Parser
         {
             ComponentsCollection = sourceCollection;
         }
+
+        public string CurrentSentence { get; private set; }
     }
 }
