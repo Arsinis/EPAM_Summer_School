@@ -7,6 +7,6 @@ namespace Parser
 {
     public interface ISentence 
     {
-        string CurrentSentence { get; }
+        ICollection<ISentenceComponent> ComponentsCollection { get; }
     }
 }

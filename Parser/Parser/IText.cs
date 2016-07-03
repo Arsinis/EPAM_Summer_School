@@ -7,6 +7,7 @@ namespace Parser
 {
     public interface IText 
     {
-        ICollection<ISentence> SentencesCollection { get; }
+        IEnumerable<ISentence> SentencesCollection { get; }
+       
     }
 }

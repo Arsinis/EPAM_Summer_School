@@ -7,21 +7,24 @@ namespace Parser
 {
     public class Text : IText
     {
-        private ICollection<ISentence> _sentencesCollection;
 
-        public ICollection<ISentence> SentencesCollection
-        {
-            get 
-            {
-                return _sentencesCollection;
-            }
-            set { this._sentencesCollection = value; }
-        }
+        public IEnumerable<ISentence> SentencesCollection { get; set; }
 
         public Text(ICollection<ISentence> sourceCollection)
         {
             SentencesCollection = sourceCollection;
             
-        } 
+        }
+
+        public void OutText()
+        {
+            foreach (var sentence in SentencesCollection)
+            {
+                foreach (var component in sentence.ComponentsCollection)
+                {
+                    Console.Write(component.Component);
+                }
+            }
+        }
     }
 }

@@ -12,9 +12,16 @@ namespace Test
     {
         public static void Main(string[] args)
         {
-            string testing = "Hello World! Are you okay? Today is Sunday.";
+            string testing = " Hello my best friend! Are you okay? Today sunny.";
             Parsing parse = new Parsing();
             Text txt = parse.Parse(testing);
+            txt.OutText();
+            Console.WriteLine();
+            Text anothertxt = parse.Parse(testing);
+            anothertxt.SentencesCollection =
+                anothertxt.SentencesCollection.OrderBy(sentence => sentence.ComponentsCollection.OfType<IWord>().Count());
+            anothertxt.OutText();
+               
             Console.ReadKey();
         }
     }

@@ -7,22 +7,12 @@ namespace Parser
 {
     public class Sentence :ISentence
     {
-        private ICollection<ISentenceComponent> _componentsCollection;
-
-        public ICollection<ISentenceComponent> ComponentsCollection
-        {
-            get
-            {
-                return _componentsCollection;
-            }
-            set { this._componentsCollection = value; }
-        }
+        public ICollection<ISentenceComponent> ComponentsCollection { get; }
 
         public Sentence(ICollection<ISentenceComponent> sourceCollection)
         {
             ComponentsCollection = sourceCollection;
         }
 
-        public string CurrentSentence { get; private set; }
     }
 }
