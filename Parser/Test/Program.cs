@@ -41,6 +41,17 @@ namespace Test
             anothertxt.OutText();
             Console.WriteLine();
 
+
+            SortedDictionary<string, List<int>> dic = anothertxt.Concordance(2);
+            foreach (var d in dic)
+            {
+                Console.Write(d.Key + "      "+d.Value[0]+":");
+                for (int i = 1; i < d.Value.Count(); i++)
+                {
+                    Console.Write(d.Value[i]+" ");
+                }
+                Console.WriteLine();
+            }
             Console.ReadKey();
         }
     }
