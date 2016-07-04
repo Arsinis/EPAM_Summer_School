@@ -14,7 +14,7 @@ namespace Parser
             Component = component;
         }
 
-        public string Component { get; private set; }
+        public string Component { get;  set; }
         public bool IsStartWithconsonant()
         {
             return !vowels.Contains(Component.First());

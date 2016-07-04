@@ -74,6 +74,35 @@ namespace Parser
             return newsentences;
         }
 
-        
+        public ICollection<ISentence> DuplicateCollection()
+        {
+            ICollection<ISentence> newCollection = new List<ISentence>();
+            foreach (var sentence in SentencesCollection)
+            {
+                newCollection.Add(sentence);
+            }
+            return newCollection;
+        } 
+
+        public ICollection<ISentence> ReplaceWord(string str, int number, Parsing parser,int length)
+        {
+            ICollection<ISentence> newCollection = DuplicateCollection();
+            ISentence sentence = newCollection.ElementAt(number);
+            foreach (var component in sentence.ComponentsCollection)
+            {
+                if (component.GetType() == typeof (Word))
+                {
+                    if ((component as Word).Component.Length == length)
+                        (component as Word).Component = str;
+                }
+            }
+            string buffer = null;
+            foreach (var component in sentence.ComponentsCollection)
+            {
+                buffer += component.Component;
+            }
+            sentence.ComponentsCollection = parser.GetSentenceComponent(buffer);
+            return newCollection;
+        }
     }
 }

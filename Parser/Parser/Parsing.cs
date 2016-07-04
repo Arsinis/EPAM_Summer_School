@@ -16,7 +16,7 @@ namespace Parser
             ICollection<ISentenceComponent> components = new List<ISentenceComponent>();
             for (int index = 0; index < sen.Length; index++)
             {
-                if ((sen[index] >= 97 && sen[index] <= 122) || (sen[index] >= 65 && sen[index] <= 90))
+                if ((sen[index] >= 'a' && sen[index] <= 'z') || (sen[index] >= 'A' && sen[index] <= 'Z'))
                     buffer += sen[index];
                 if (sen[index] == ' ')
                 {
@@ -58,7 +58,7 @@ namespace Parser
                     
             }
             Text txt = new Text(sentences);
-             return txt;
+            return txt;
         } 
     }
 }

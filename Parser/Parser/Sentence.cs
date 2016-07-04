@@ -7,7 +7,7 @@ namespace Parser
 {
     public class Sentence :ISentence
     {
-        public ICollection<ISentenceComponent> ComponentsCollection { get; }
+        public ICollection<ISentenceComponent> ComponentsCollection { get; set; }
 
         public Sentence(ICollection<ISentenceComponent> sourceCollection)
         {

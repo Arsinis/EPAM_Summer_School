@@ -17,17 +17,30 @@ namespace Test
             Text txt = parse.Parse(testing);
             txt.OutText();
             Console.WriteLine();
+
+
             Text anothertxt = parse.Parse(testing);
             anothertxt.SentencesCollection =
                 anothertxt.SentencesCollection.OrderBy(sentence => sentence.ComponentsCollection.OfType<IWord>().Count())
                     .ToList();
             anothertxt.OutText();
             Console.WriteLine();
+
+
             txt.InterrogativeSentences(3);
             Console.WriteLine();
+
+
             txt.SentencesCollection = txt.DeleteAllWords(5);
             txt.OutText();
             Console.WriteLine();
+
+
+            anothertxt.SentencesCollection = anothertxt.ReplaceWord("qwe srt",
+                1, parse, 3);
+            anothertxt.OutText();
+            Console.WriteLine();
+
             Console.ReadKey();
         }
     }

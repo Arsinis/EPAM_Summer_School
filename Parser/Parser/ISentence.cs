@@ -7,6 +7,6 @@ namespace Parser
 {
     public interface ISentence 
     {
-        ICollection<ISentenceComponent> ComponentsCollection { get; }
+        ICollection<ISentenceComponent> ComponentsCollection { get; set; }
     }
 }
