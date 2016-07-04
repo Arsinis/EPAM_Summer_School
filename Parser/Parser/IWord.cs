@@ -7,6 +7,6 @@ namespace Parser
 {
     public interface IWord : ISentenceComponent
     {
-        bool IsStartWithconsolant();
+        bool IsStartWithconsonant();
     }
 }

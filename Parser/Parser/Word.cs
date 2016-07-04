@@ -7,7 +7,7 @@ namespace Parser
 {
     public class Word : IWord
     {
-        public static ICollection<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+        public static ICollection<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u','y','A', 'E', 'I', 'O', 'U','Y' };
 
         public Word(string component)
         {
@@ -15,7 +15,7 @@ namespace Parser
         }
 
         public string Component { get; private set; }
-        public bool IsStartWithconsolant()
+        public bool IsStartWithconsonant()
         {
             return !vowels.Contains(Component.First());
         }

@@ -19,9 +19,15 @@ namespace Test
             Console.WriteLine();
             Text anothertxt = parse.Parse(testing);
             anothertxt.SentencesCollection =
-                anothertxt.SentencesCollection.OrderBy(sentence => sentence.ComponentsCollection.OfType<IWord>().Count());
+                anothertxt.SentencesCollection.OrderBy(sentence => sentence.ComponentsCollection.OfType<IWord>().Count())
+                    .ToList();
             anothertxt.OutText();
-               
+            Console.WriteLine();
+            txt.InterrogativeSentences(3);
+            Console.WriteLine();
+            txt.SentencesCollection = txt.DeleteAllWords(5);
+            txt.OutText();
+            Console.WriteLine();
             Console.ReadKey();
         }
     }
