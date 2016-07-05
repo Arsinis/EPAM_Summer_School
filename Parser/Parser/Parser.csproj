@@ -40,17 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISentence.cs" />
-    <Compile Include="ISentenceComponent.cs" />
-    <Compile Include="IText.cs" />
-    <Compile Include="IWord.cs" />
-    <Compile Include="Parsing.cs" />
+    <Compile Include="Model\ISentence.cs" />
+    <Compile Include="Model\ISentenceComponent.cs" />
+    <Compile Include="Model\IText.cs" />
+    <Compile Include="Model\IWord.cs" />
+    <Compile Include="Parsers\Parsing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sentence.cs" />
-    <Compile Include="SentenceEnding.cs" />
-    <Compile Include="SentencePunctuation.cs" />
-    <Compile Include="Text.cs" />
-    <Compile Include="Word.cs" />
+    <Compile Include="Model\Sentence.cs" />
+    <Compile Include="Model\SentenceEnding.cs" />
+    <Compile Include="Model\SentencePunctuation.cs" />
+    <Compile Include="Model\Text.cs" />
+    <Compile Include="Model\Word.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

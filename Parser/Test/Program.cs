@@ -5,6 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Parser;
+using Parser.Model;
+using Parser.Parsers;
 
 namespace Test
 {
@@ -20,9 +22,10 @@ namespace Test
 
 
             Text anothertxt = parse.Parse(testing);
-            anothertxt.SentencesCollection =
+            /*anothertxt.SentencesCollection =
                 anothertxt.SentencesCollection.OrderBy(sentence => sentence.ComponentsCollection.OfType<IWord>().Count())
-                    .ToList();
+                    .ToList*/
+            anothertxt.SentencesCollection = anothertxt.SortingCollection();
             anothertxt.OutText();
             Console.WriteLine();
 

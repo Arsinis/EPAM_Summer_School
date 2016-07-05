@@ -1,62 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Parser.Text">
+  <Class Name="Parser.Model.Text">
     <Position X="8.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAIAIAAAAABAAACAAAAgAAAAQ=</HashCode>
-      <FileName>Text.cs</FileName>
+      <HashCode>AAAAAAAgAAAAIAAAAAAAIAIAAAAABAAACAAAAgAAAAQ=</HashCode>
+      <FileName>Model\Text.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Parser.Sentence">
+  <Class Name="Parser.Model.Sentence">
     <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sentence.cs</FileName>
+      <FileName>Model\Sentence.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Parser.Word">
+  <Class Name="Parser.Model.Word">
     <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAEAAAAAAAAABAAAAAAAA=</HashCode>
-      <FileName>Word.cs</FileName>
+      <FileName>Model\Word.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Parser.Parsing">
+  <Class Name="Parser.Parsers.Parsing">
     <Position X="2.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAEA=</HashCode>
-      <FileName>Parsing.cs</FileName>
+      <FileName>Parsers\Parsing.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Parser.IText">
+  <Interface Name="Parser.Model.IText">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IText.cs</FileName>
+      <FileName>Model\IText.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Parser.ISentence">
+  <Interface Name="Parser.Model.ISentence">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ISentence.cs</FileName>
+      <FileName>Model\ISentence.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Parser.IWord">
+  <Interface Name="Parser.Model.IWord">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IWord.cs</FileName>
+      <FileName>Model\IWord.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Parser.ISentenceComponent">
+  <Interface Name="Parser.Model.ISentenceComponent">
     <Position X="6.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
-      <FileName>ISentenceComponent.cs</FileName>
+      <FileName>Model\ISentenceComponent.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
