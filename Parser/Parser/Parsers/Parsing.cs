@@ -4,7 +4,7 @@ using Parser.Model;
 
 namespace Parser.Parsers
 {
-    public class Parsing
+    public class Parsing : IParsing
     {
         public string Intext = ",:;";
         public string Ending = ".!?";

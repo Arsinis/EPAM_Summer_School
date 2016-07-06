@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Concordance;
 using Parser;
 using Parser.Model;
 using Parser.Parsers;
@@ -48,17 +49,9 @@ namespace Test
             anothertxt.OutText();
             Console.WriteLine();
 
-
-            SortedDictionary<string, List<int>> dic = anothertxt.Concordance(2);
-            foreach (var d in dic)
-            {
-                Console.Write(d.Key + "      "+d.Value[0]+":");
-                for (int i = 1; i < d.Value.Count(); i++)
-                {
-                    Console.Write(d.Value[i]+" ");
-                }
-                Console.WriteLine();
-            }
+            ConcordanceBuilder builder = new ConcordanceBuilder();
+            ConcordanceResult concordance = new ConcordanceResult(builder.Concordance(2,txt));
+            concordance.OutConcordance();
             Console.ReadKey();
         }
     }

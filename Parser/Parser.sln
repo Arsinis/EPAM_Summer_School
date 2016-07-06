@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{6679CF7F-6ADE-4361-B441-5CF5F3FA3AB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concordance", "Concordance\Concordance.csproj", "{F04E41B9-DB51-410D-B4E8-89A7A1E73DDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6679CF7F-6ADE-4361-B441-5CF5F3FA3AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6679CF7F-6ADE-4361-B441-5CF5F3FA3AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6679CF7F-6ADE-4361-B441-5CF5F3FA3AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04E41B9-DB51-410D-B4E8-89A7A1E73DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04E41B9-DB51-410D-B4E8-89A7A1E73DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04E41B9-DB51-410D-B4E8-89A7A1E73DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04E41B9-DB51-410D-B4E8-89A7A1E73DDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

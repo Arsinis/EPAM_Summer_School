@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Concordance\Concordance.csproj">
+      <Project>{f04e41b9-db51-410d-b4e8-89a7a1e73dde}</Project>
+      <Name>Concordance</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Parser\Parser.csproj">
       <Project>{105a8f23-9b62-4705-98e7-4c006b284e70}</Project>
       <Name>Parser</Name>

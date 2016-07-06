@@ -19,6 +19,5 @@ namespace Parser.Model
 
         ICollection<ISentence> SortingCollection();
 
-        SortedDictionary<string, List<int>> Concordance(int pageCount);
     }
 }
