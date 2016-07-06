@@ -8,6 +8,7 @@ namespace Parser.Parsers
     {
         public string Intext = ",:;";
         public string Ending = ".!?";
+        public string PossibleSymbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
         //Parse distinct sentence
         public ICollection<ISentenceComponent> GetSentenceComponent(string sen)
         {
@@ -15,7 +16,7 @@ namespace Parser.Parsers
             ICollection<ISentenceComponent> components = new List<ISentenceComponent>();
             for (int index = 0; index < sen.Length; index++)
             {
-                if ((sen[index] >= 'a' && sen[index] <= 'z') || (sen[index] >= 'A' && sen[index] <= 'Z'))
+                if (PossibleSymbols.Contains(sen[index]))
                     buffer += sen[index];
                 if (sen[index] == ' ')
                 {
@@ -48,7 +49,7 @@ namespace Parser.Parsers
         public Text Parse(string text)
         {
             ICollection<ISentence> sentences = new List<ISentence>();
-            text = text.Replace("\n", " ");
+            text = text.Replace("\n", "");
             text = text.Replace("\r", " ");
             string buffer = null;
             foreach (var symbol in text)
