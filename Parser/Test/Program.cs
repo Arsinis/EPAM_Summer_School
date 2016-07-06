@@ -25,30 +25,28 @@ namespace Test
             txt.OutText();
             Console.WriteLine();
 
-
-            Text anothertxt = parse.Parse(testing);
-            /*anothertxt.SentencesCollection =
-                anothertxt.SentencesCollection.OrderBy(sentence => sentence.ComponentsCollection.OfType<IWord>().Count())
-                    .ToList*/
+            //Displays all sentences of a given text in ascending order of the number of words in each of them.
+            Text anothertxt = parse.Parse(read.Reading(filename));
             anothertxt.SentencesCollection = anothertxt.SortingCollection();
             anothertxt.OutText();
             Console.WriteLine();
 
-
+            //Find and print in all interrogative sentences of the text the words without repetition of a given length.
             txt.GetWordsFromInterrogativeSentences(3);
             Console.WriteLine();
 
-
+            //Remove from the text all words of a given length, beginning with a consonant letter.
             txt.SentencesCollection = txt.RemoveWordsStartWithConsonant(5);
             txt.OutText();
             Console.WriteLine();
 
-
+            //In a sentence, replace the words of a given length by the specified substring.
             anothertxt.SentencesCollection = anothertxt.ReplaceWordWithString(StringToReplace,
                 1, parse, 3);
             anothertxt.OutText();
             Console.WriteLine();
 
+            //Concordance task
             ConcordanceBuilder builder = new ConcordanceBuilder();
             ConcordanceResult concordance = new ConcordanceResult(builder.Concordance(2,txt));
             concordance.OutConcordance();

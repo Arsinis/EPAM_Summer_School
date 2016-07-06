@@ -7,7 +7,6 @@ namespace Parser.Model
 {
     public class Text : IText
     {
-
         public ICollection<ISentence> SentencesCollection { get; set; }
 
         public Text(ICollection<ISentence> sourceCollection)
@@ -83,10 +82,11 @@ namespace Parser.Model
             return newCollection;
         } 
 
-        public ICollection<ISentence> ReplaceWordWithString(string str, int number, Parsing parser,int length)
+        public ICollection<ISentence> ReplaceWordWithString(string str, int number, Parsing parser, int length)
         {
             ICollection<ISentence> newCollection = DuplicateCollection();
             ISentence sentence = newCollection.ElementAt(number);
+           
             foreach (var component in sentence.ComponentsCollection)
             {
                 if (component.GetType() == typeof (Word))

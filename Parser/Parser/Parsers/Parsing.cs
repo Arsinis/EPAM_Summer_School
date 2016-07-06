@@ -8,6 +8,7 @@ namespace Parser.Parsers
     {
         public string Intext = ",:;";
         public string Ending = ".!?";
+        //Parse distinct sentence
         public ICollection<ISentenceComponent> GetSentenceComponent(string sen)
         {
             string buffer = null;
@@ -23,12 +24,16 @@ namespace Parser.Parsers
                         components.Add(new Word(buffer));
                         buffer = null;
                     }
-                    components.Add(new SentencePunctuation(" "));
+                    components.Add(new SentenceSpacing());
                 }
                 if (Intext.Contains(sen[index]))
                 {
                     components.Add(new Word(buffer));
                     buffer = null;
+                    components.Add(new SentencePunctuation(sen[index].ToString()));
+                }
+                if (sen[index]=='-' && sen[index-1]==' ' && sen[index+1]==' ')
+                {
                     components.Add(new SentencePunctuation(sen[index].ToString()));
                 }
                 if (Ending.Contains(sen[index]))
@@ -39,8 +44,7 @@ namespace Parser.Parsers
             }
             return components;
         }
-
-
+        //Parse whole text in sentences
         public Text Parse(string text)
         {
             ICollection<ISentence> sentences = new List<ISentence>();

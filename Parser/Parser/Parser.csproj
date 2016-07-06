@@ -44,6 +44,7 @@
     <Compile Include="Model\ISentenceComponent.cs" />
     <Compile Include="Model\IText.cs" />
     <Compile Include="Model\IWord.cs" />
+    <Compile Include="Model\SentenceSpacing.cs" />
     <Compile Include="Parsers\IParsing.cs" />
     <Compile Include="Parsers\Parsing.cs" />
     <Compile Include="Readers\Reader.cs" />
