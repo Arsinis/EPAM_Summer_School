@@ -34,14 +34,18 @@ namespace Parser.Parsers
                 if (Ending.Contains(sen[index]))
                 {
                     components.Add(new Word(buffer));
-                    components.Add(new SentenceEnding(sen[index].ToString()));
+                    components.Add(new SentenceEnding(sen.Substring(index)));
                 }
             }
             return components;
         }
-         public Text Parse(string text)
+
+
+        public Text Parse(string text)
         {
             ICollection<ISentence> sentences = new List<ISentence>();
+            text = text.Replace("\n", " ");
+            text = text.Replace("\r", " ");
             string buffer = null;
             foreach (var symbol in text)
             {

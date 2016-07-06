@@ -27,7 +27,7 @@ namespace Parser.Model
             }
         }
 
-        public void InterrogativeSentences(int length)
+        public void GetWordsFromInterrogativeSentences(int length)
         {
             foreach (var sentence in SentencesCollection)
             {
@@ -48,7 +48,7 @@ namespace Parser.Model
             }
         }
 
-        public ICollection<ISentence> DeleteAllWords(int length)
+        public ICollection<ISentence> RemoveWordsStartWithConsonant(int length)
         {
             ICollection<ISentence> newsentences = new List<ISentence>();
             foreach (var sentence in SentencesCollection)
@@ -83,7 +83,7 @@ namespace Parser.Model
             return newCollection;
         } 
 
-        public ICollection<ISentence> ReplaceWord(string str, int number, Parsing parser,int length)
+        public ICollection<ISentence> ReplaceWordWithString(string str, int number, Parsing parser,int length)
         {
             ICollection<ISentence> newCollection = DuplicateCollection();
             ISentence sentence = newCollection.ElementAt(number);

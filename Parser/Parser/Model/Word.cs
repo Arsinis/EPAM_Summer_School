@@ -5,7 +5,7 @@ namespace Parser.Model
 {
     public class Word : IWord
     {
-        public static ICollection<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u','y','A', 'E', 'I', 'O', 'U','Y' };
+        public static ICollection<char> Vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u','y','A', 'E', 'I', 'O', 'U','Y' };
 
         public Word(string component)
         {
@@ -15,7 +15,7 @@ namespace Parser.Model
         public string Component { get;  set; }
         public bool IsStartWithconsonant()
         {
-            return !vowels.Contains(Component.First());
+            return !Vowels.Contains(Component.First());
         }
     }
 }

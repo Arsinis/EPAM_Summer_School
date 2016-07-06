@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Parser;
 using Parser.Model;
 using Parser.Parsers;
+using Parser.Readers;
 
 namespace Test
 {
@@ -15,8 +16,11 @@ namespace Test
         public static void Main(string[] args)
         {
             string testing = " Hello my best friend! Are you okay? Today sunny.";
+            string filename = "e:/1.txt";
+            string StringToReplace = "abc def ";
+            Reader read = new Reader();
             Parsing parse = new Parsing();
-            Text txt = parse.Parse(testing);
+            Text txt = parse.Parse(read.Reading(filename));
             txt.OutText();
             Console.WriteLine();
 
@@ -30,16 +34,16 @@ namespace Test
             Console.WriteLine();
 
 
-            txt.InterrogativeSentences(3);
+            txt.GetWordsFromInterrogativeSentences(3);
             Console.WriteLine();
 
 
-            txt.SentencesCollection = txt.DeleteAllWords(5);
+            txt.SentencesCollection = txt.RemoveWordsStartWithConsonant(5);
             txt.OutText();
             Console.WriteLine();
 
 
-            anothertxt.SentencesCollection = anothertxt.ReplaceWord("qwe srt",
+            anothertxt.SentencesCollection = anothertxt.ReplaceWordWithString(StringToReplace,
                 1, parse, 3);
             anothertxt.OutText();
             Console.WriteLine();
