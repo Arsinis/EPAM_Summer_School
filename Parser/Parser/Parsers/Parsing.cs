@@ -8,15 +8,23 @@ namespace Parser.Parsers
     {
         public string Intext = ",:;";
         public string Ending = ".!?";
-        public string PossibleSymbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-        //Parse distinct sentence
-        public ICollection<ISentenceComponent> GetSentenceComponent(string sen)
+       
+        public bool IsLetterOrDigit(char symbol)
+        {
+            string PossibleSymbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'";
+            if (PossibleSymbols.Contains(symbol))
+                return true;
+            return false;
+        }
+
+    //Parse distinct sentence
+    public ICollection<ISentenceComponent> GetSentenceComponent(string sen)
         {
             string buffer = null;
             ICollection<ISentenceComponent> components = new List<ISentenceComponent>();
             for (int index = 0; index < sen.Length; index++)
             {
-                if (PossibleSymbols.Contains(sen[index]))
+                if (IsLetterOrDigit(sen[index]))
                     buffer += sen[index];
                 if (sen[index] == ' ')
                 {
